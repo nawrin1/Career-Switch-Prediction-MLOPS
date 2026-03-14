@@ -1,0 +1,46 @@
+columns:
+  - enrollee_id: int
+  - city: int
+  - city_development_index: float
+  - gender: category
+  - relevent_experience: int
+  - enrolled_university: category
+  - education_level: category
+  - major_discipline: category
+  - experience: float
+  - company_type: category
+  - last_new_job: float
+  - training_hours: float
+  - company_size: float
+  - will_change_career: int
+
+numerical_columns:
+  - city_development_index
+  - experience
+  - last_new_job
+  - training_hours
+  - company_size
+  - relevent_experience
+  - city
+
+categorical_columns:
+  - gender
+  - enrolled_university
+  - education_level
+  - major_discipline
+  - company_type
+
+drop_columns: 
+  - enrollee_id
+
+#for data transformation
+num_features:
+  - training_hours
+  - experience
+  - last_new_job
+
+# For MinMaxScaler/StandardScaler 
+mm_columns:
+  - training_hours
+  - city_development_index
+  - company_size_max
