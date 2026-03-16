@@ -64,6 +64,6 @@ class ModelPusherConfig:
     s3_model_key_path: str = MODEL_FILE_NAME
 
 @dataclass
-class VehiclePredictorConfig:
+class CareerPredictorConfig:
     model_file_path: str = MODEL_FILE_NAME
     model_bucket_name: str = MODEL_BUCKET_NAME

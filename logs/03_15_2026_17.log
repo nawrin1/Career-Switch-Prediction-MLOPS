@@ -1,0 +1,68 @@
+[ 2026-03-15 17:43:09,861 ] botocore.hooks - DEBUG - Changing event name from creating-client-class.iot-data to creating-client-class.iot-data-plane
+[ 2026-03-15 17:43:09,866 ] botocore.hooks - DEBUG - Changing event name from before-call.apigateway to before-call.api-gateway
+[ 2026-03-15 17:43:09,868 ] botocore.hooks - DEBUG - Changing event name from request-created.machinelearning.Predict to request-created.machine-learning.Predict
+[ 2026-03-15 17:43:09,871 ] botocore.hooks - DEBUG - Changing event name from before-parameter-build.autoscaling.CreateLaunchConfiguration to before-parameter-build.auto-scaling.CreateLaunchConfiguration
+[ 2026-03-15 17:43:09,871 ] botocore.hooks - DEBUG - Changing event name from before-parameter-build.route53 to before-parameter-build.route-53
+[ 2026-03-15 17:43:09,874 ] botocore.hooks - DEBUG - Changing event name from request-created.cloudsearchdomain.Search to request-created.cloudsearch-domain.Search
+[ 2026-03-15 17:43:09,874 ] botocore.hooks - DEBUG - Changing event name from docs.*.autoscaling.CreateLaunchConfiguration.complete-section to docs.*.auto-scaling.CreateLaunchConfiguration.complete-section
+[ 2026-03-15 17:43:09,876 ] botocore.hooks - DEBUG - Changing event name from before-parameter-build.logs.CreateExportTask to before-parameter-build.cloudwatch-logs.CreateExportTask
+[ 2026-03-15 17:43:09,881 ] botocore.hooks - DEBUG - Changing event name from docs.*.logs.CreateExportTask.complete-section to docs.*.cloudwatch-logs.CreateExportTask.complete-section
+[ 2026-03-15 17:43:09,881 ] botocore.hooks - DEBUG - Changing event name from before-parameter-build.cloudsearchdomain.Search to before-parameter-build.cloudsearch-domain.Search
+[ 2026-03-15 17:43:09,881 ] botocore.hooks - DEBUG - Changing event name from docs.*.cloudsearchdomain.Search.complete-section to docs.*.cloudsearch-domain.Search.complete-section
+[ 2026-03-15 17:43:09,987 ] botocore.loaders - DEBUG - Loading JSON file: D:\Data Science\Project\career\Lib\site-packages\boto3\data\s3\2006-03-01\resources-1.json
+[ 2026-03-15 17:43:10,013 ] botocore.loaders - DEBUG - Loading JSON file: D:\Data Science\Project\career\Lib\site-packages\botocore\data\endpoints.json
+[ 2026-03-15 17:43:10,103 ] botocore.loaders - DEBUG - Loading JSON file: D:\Data Science\Project\career\Lib\site-packages\botocore\data\sdk-default-configuration.json
+[ 2026-03-15 17:43:10,103 ] botocore.hooks - DEBUG - Event choose-service-name: calling handler <function handle_service_name_alias at 0x000002EA00CA4FE0>
+[ 2026-03-15 17:43:10,251 ] botocore.loaders - DEBUG - Loading JSON file: D:\Data Science\Project\career\Lib\site-packages\botocore\data\s3\2006-03-01\service-2.json.gz
+[ 2026-03-15 17:43:10,271 ] botocore.loaders - DEBUG - Loading JSON file: D:\Data Science\Project\career\Lib\site-packages\botocore\data\s3\2006-03-01\service-2.sdk-extras.json
+[ 2026-03-15 17:43:18,378 ] botocore.hooks - DEBUG - Changing event name from creating-client-class.iot-data to creating-client-class.iot-data-plane
+[ 2026-03-15 17:43:18,382 ] botocore.hooks - DEBUG - Changing event name from before-call.apigateway to before-call.api-gateway
+[ 2026-03-15 17:43:18,383 ] botocore.hooks - DEBUG - Changing event name from request-created.machinelearning.Predict to request-created.machine-learning.Predict
+[ 2026-03-15 17:43:18,385 ] botocore.hooks - DEBUG - Changing event name from before-parameter-build.autoscaling.CreateLaunchConfiguration to before-parameter-build.auto-scaling.CreateLaunchConfiguration
+[ 2026-03-15 17:43:18,385 ] botocore.hooks - DEBUG - Changing event name from before-parameter-build.route53 to before-parameter-build.route-53
+[ 2026-03-15 17:43:18,385 ] botocore.hooks - DEBUG - Changing event name from request-created.cloudsearchdomain.Search to request-created.cloudsearch-domain.Search
+[ 2026-03-15 17:43:18,386 ] botocore.hooks - DEBUG - Changing event name from docs.*.autoscaling.CreateLaunchConfiguration.complete-section to docs.*.auto-scaling.CreateLaunchConfiguration.complete-section
+[ 2026-03-15 17:43:18,386 ] botocore.hooks - DEBUG - Changing event name from before-parameter-build.logs.CreateExportTask to before-parameter-build.cloudwatch-logs.CreateExportTask
+[ 2026-03-15 17:43:18,386 ] botocore.hooks - DEBUG - Changing event name from docs.*.logs.CreateExportTask.complete-section to docs.*.cloudwatch-logs.CreateExportTask.complete-section
+[ 2026-03-15 17:43:18,386 ] botocore.hooks - DEBUG - Changing event name from before-parameter-build.cloudsearchdomain.Search to before-parameter-build.cloudsearch-domain.Search
+[ 2026-03-15 17:43:18,386 ] botocore.hooks - DEBUG - Changing event name from docs.*.cloudsearchdomain.Search.complete-section to docs.*.cloudsearch-domain.Search.complete-section
+[ 2026-03-15 17:43:18,436 ] botocore.loaders - DEBUG - Loading JSON file: D:\Data Science\Project\career\Lib\site-packages\boto3\data\s3\2006-03-01\resources-1.json
+[ 2026-03-15 17:43:18,441 ] botocore.loaders - DEBUG - Loading JSON file: D:\Data Science\Project\career\Lib\site-packages\botocore\data\endpoints.json
+[ 2026-03-15 17:43:18,501 ] botocore.loaders - DEBUG - Loading JSON file: D:\Data Science\Project\career\Lib\site-packages\botocore\data\sdk-default-configuration.json
+[ 2026-03-15 17:43:18,501 ] botocore.hooks - DEBUG - Event choose-service-name: calling handler <function handle_service_name_alias at 0x000002BBE7718B80>
+[ 2026-03-15 17:43:18,561 ] botocore.loaders - DEBUG - Loading JSON file: D:\Data Science\Project\career\Lib\site-packages\botocore\data\s3\2006-03-01\service-2.json.gz
+[ 2026-03-15 17:43:18,576 ] botocore.loaders - DEBUG - Loading JSON file: D:\Data Science\Project\career\Lib\site-packages\botocore\data\s3\2006-03-01\service-2.sdk-extras.json
+[ 2026-03-15 17:43:18,667 ] botocore.loaders - DEBUG - Loading JSON file: D:\Data Science\Project\career\Lib\site-packages\botocore\data\s3\2006-03-01\endpoint-rule-set-1.json.gz
+[ 2026-03-15 17:43:18,696 ] botocore.loaders - DEBUG - Loading JSON file: D:\Data Science\Project\career\Lib\site-packages\botocore\data\partitions.json
+[ 2026-03-15 17:43:18,701 ] botocore.hooks - DEBUG - Event creating-client-class.s3: calling handler <function add_generate_presigned_post at 0x000002BBE766D300>
+[ 2026-03-15 17:43:18,701 ] botocore.hooks - DEBUG - Event creating-client-class.s3: calling handler <function lazy_call.<locals>._handler at 0x000002BBFA2B54E0>
+[ 2026-03-15 17:43:18,701 ] botocore.hooks - DEBUG - Event creating-client-class.s3: calling handler <function add_generate_presigned_url at 0x000002BBE766D080>
+[ 2026-03-15 17:43:18,708 ] botocore.configprovider - DEBUG - Looking for endpoint for s3 via: environment_service
+[ 2026-03-15 17:43:18,708 ] botocore.configprovider - DEBUG - Looking for endpoint for s3 via: environment_global
+[ 2026-03-15 17:43:18,708 ] botocore.configprovider - DEBUG - Looking for endpoint for s3 via: config_service
+[ 2026-03-15 17:43:18,708 ] botocore.configprovider - DEBUG - Looking for endpoint for s3 via: config_global
+[ 2026-03-15 17:43:18,708 ] botocore.configprovider - DEBUG - No configured endpoint found.
+[ 2026-03-15 17:43:18,711 ] botocore.endpoint - DEBUG - Setting s3 timeout as (60, 60)
+[ 2026-03-15 17:43:18,742 ] botocore.loaders - DEBUG - Loading JSON file: D:\Data Science\Project\career\Lib\site-packages\botocore\data\_retry.json
+[ 2026-03-15 17:43:18,749 ] botocore.client - DEBUG - Registering retry handlers for service: s3
+[ 2026-03-15 17:43:18,749 ] botocore.utils - DEBUG - Registering S3 region redirector handler
+[ 2026-03-15 17:43:18,751 ] botocore.utils - DEBUG - Registering S3Express Identity Resolver
+[ 2026-03-15 17:43:18,751 ] boto3.resources.factory - DEBUG - Loading s3:s3
+[ 2026-03-15 17:43:18,753 ] botocore.hooks - DEBUG - Event choose-service-name: calling handler <function handle_service_name_alias at 0x000002BBE7718B80>
+[ 2026-03-15 17:43:18,758 ] botocore.hooks - DEBUG - Event creating-client-class.s3: calling handler <function add_generate_presigned_post at 0x000002BBE766D300>
+[ 2026-03-15 17:43:18,758 ] botocore.hooks - DEBUG - Event creating-client-class.s3: calling handler <function lazy_call.<locals>._handler at 0x000002BBFA2B54E0>
+[ 2026-03-15 17:43:18,758 ] botocore.hooks - DEBUG - Event creating-client-class.s3: calling handler <function add_generate_presigned_url at 0x000002BBE766D080>
+[ 2026-03-15 17:43:18,758 ] botocore.configprovider - DEBUG - Looking for endpoint for s3 via: environment_service
+[ 2026-03-15 17:43:18,761 ] botocore.configprovider - DEBUG - Looking for endpoint for s3 via: environment_global
+[ 2026-03-15 17:43:18,761 ] botocore.configprovider - DEBUG - Looking for endpoint for s3 via: config_service
+[ 2026-03-15 17:43:18,761 ] botocore.configprovider - DEBUG - Looking for endpoint for s3 via: config_global
+[ 2026-03-15 17:43:18,761 ] botocore.configprovider - DEBUG - No configured endpoint found.
+[ 2026-03-15 17:43:18,765 ] botocore.endpoint - DEBUG - Setting s3 timeout as (60, 60)
+[ 2026-03-15 17:43:18,768 ] botocore.client - DEBUG - Registering retry handlers for service: s3
+[ 2026-03-15 17:43:18,771 ] botocore.utils - DEBUG - Registering S3 region redirector handler
+[ 2026-03-15 17:43:18,771 ] botocore.utils - DEBUG - Registering S3Express Identity Resolver
+[ 2026-03-15 17:43:18,773 ] root - INFO - Entered the get_bucket method of SimpleStorageService class
+[ 2026-03-15 17:43:18,773 ] boto3.resources.factory - DEBUG - Loading s3:Bucket
+[ 2026-03-15 17:43:18,773 ] boto3.resources.model - DEBUG - Renaming Bucket attribute name
+[ 2026-03-15 17:43:18,773 ] botocore.hooks - DEBUG - Event creating-resource-class.s3.Bucket: calling handler <function lazy_call.<locals>._handler at 0x000002BB8C140180>
+[ 2026-03-15 17:43:18,773 ] root - INFO - Exited the get_bucket method of SimpleStorageService class

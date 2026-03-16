@@ -1,0 +1,16 @@
+artifact
+venv
+env
+.gitignore
+logs
+template.py
+demo.py
+README.md
+LICENSE
+src.egg.-info
+notebook
+career/
+career-switch-prediction/
+Career_Switch_Prediction_Dataset.csv
+data/
+artifact/

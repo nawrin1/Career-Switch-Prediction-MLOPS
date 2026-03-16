@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Switch Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Career Switch Prediction</h1>
+            <p>Predict if an employee is looking for a new job</p>
+        </header>
+
+        <section class="form-container">
+            <form method="post" action="/">
+                <div class="row">
+                    <!-- City Index -->
+                    <div class="input-group">
+                        <label for="city_development_index">City Development Index (0.4 - 1.0)</label>
+                        <input type="number" step="0.001" id="city_development_index" name="city_development_index" placeholder="e.g. 0.92" required>
+                    </div>
+
+                    <!-- Gender -->
+                    <div class="input-group">
+                        <label for="gender">Gender</label>
+                        <select name="gender" id="gender" required>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Education Level -->
+                    <div class="input-group">
+                        <label for="education_level">Education Level</label>
+                        <select name="education_level" id="education_level" required>
+                            <option value="Graduate">Graduate</option>
+                            <option value="Masters">Masters</option>
+                            <option value="High School">High School</option>
+                            <option value="Phd">Phd</option>
+                            <option value="Primary School">Primary School</option>
+                        </select>
+                    </div>
+
+                    <!-- Enrolled University -->
+                    <div class="input-group">
+                        <label for="enrolled_university">Enrolled University</label>
+                        <select name="enrolled_university" id="enrolled_university" required>
+                            <option value="no_enrollment">No Enrollment</option>
+                            <option value="Full time course">Full time course</option>
+                            <option value="Part time course">Part time course</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Relevant Experience -->
+                    <div class="input-group">
+                        <label for="relevent_experience">Relevant Experience</label>
+                        <select name="relevent_experience" id="relevent_experience" required>
+                            <option value="Has relevent experience">Has Relevant Experience</option>
+                            <option value="No relevent experience">No Relevant Experience</option>
+                        </select>
+                    </div>
+
+                    <!-- Major Discipline -->
+                    <div class="input-group">
+                        <label for="major_discipline">Major Discipline</label>
+                        <select name="major_discipline" id="major_discipline" required>
+                            <option value="STEM">STEM</option>
+                            <option value="Humanities">Humanities</option>
+                            <option value="Business Degree">Business Degree</option>
+                            <option value="Arts">Arts</option>
+                            <option value="No Major">No Major</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Experience -->
+                    <div class="input-group">
+                        <label for="experience">Years of Experience</label>
+                        <input type="text" id="experience" name="experience" placeholder="e.g. 5 or >20" required>
+                    </div>
+
+                    <!-- Company Size -->
+                    <div class="input-group">
+                        <label for="company_size">Company Size</label>
+                        <select name="company_size" id="company_size" required>
+                            <option value="50-99">50-99</option>
+                            <option value="100-500">100-500</option>
+                            <option value="10000+">10000+</option>
+                            <option value="10-49">10-49</option>
+                            <option value="1000-4999">1000-4999</option>
+                            <option value="<10">Less than 10</option>
+                            <option value="500-999">500-999</option>
+                            <option value="5000-9999">5000-9999</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Company Type -->
+                    <div class="input-group">
+                        <label for="company_type">Company Type</label>
+                        <select name="company_type" id="company_type" required>
+                            <option value="Pvt Ltd">Pvt Ltd</option>
+                            <option value="Funded Startup">Funded Startup</option>
+                            <option value="Early Stage Startup">Early Stage Startup</option>
+                            <option value="Public Sector">Public Sector</option>
+                            <option value="NGO">NGO</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Last New Job -->
+                    <div class="input-group">
+                        <label for="last_new_job">Last New Job (Years Difference)</label>
+                        <select name="last_new_job" id="last_new_job" required>
+                            <option value="1">1 year ago</option>
+                            <option value="2">2 years ago</option>
+                            <option value="3">3 years ago</option>
+                            <option value="4">4 years ago</option>
+                            <option value=">4">More than 4 years</option>
+                            <option value="never">Never</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Training Hours -->
+                    <div class="input-group full-width">
+                        <label for="training_hours">Training Hours Completed</label>
+                        <input type="number" id="training_hours" name="training_hours" placeholder="e.g. 50" required>
+                    </div>
+                    <!-- Hidden or Default City value -->
+                    <input type="hidden" name="city" value="city_103">
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" class="predict-btn">Analyze Career Path</button>
+                    <a href="/train" class="train-link">Train Model</a>
+                </div>
+            </form>
+        </section>
+
+        {% if context %}
+            <div class="result-card fade-in">
+                <h2>Prediction Result</h2>
+                <p class="prediction-text">{{ context }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
