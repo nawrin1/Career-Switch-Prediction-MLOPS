@@ -3,6 +3,7 @@ career-switch-prediction/
 Career_Switch_Prediction_Dataset.csv
 data/
 artifact/
+logs/
 *.csv
 *.pkl
 *.model
