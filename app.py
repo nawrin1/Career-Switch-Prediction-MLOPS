@@ -12,21 +12,20 @@ from dotenv import load_dotenv
 import os
 load_dotenv()
 
-# আপনার প্রজেক্টের কনস্ট্যান্ট এবং পাইপলাইন ইমপোর্ট
+
 from src.constants import APP_HOST, APP_PORT
 from src.pipline.prediction_pipeline import CareerData, CareerClassifier
 from src.pipline.training_pipeline import TrainPipeline
 
-# FastAPI অ্যাপ ইনিশিয়ালাইজ করা
+
 app = FastAPI()
 
-# স্ট্যাটিক ফাইল (CSS) মাউন্ট করা
+
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-# HTML টেমপ্লেট সেটআপ
+
 templates = Jinja2Templates(directory='templates')
 
-# CORS কনফিগারেশন
 origins = ["*"]
 app.add_middleware(
     CORSMiddleware,
@@ -38,7 +37,7 @@ app.add_middleware(
 
 class DataForm:
     """
-    HTML ফর্ম থেকে ডাটা গ্রহণ করার ক্লাস।
+   
     """
     def __init__(self, request: Request):
         self.request: Request = request
@@ -70,13 +69,13 @@ class DataForm:
         self.last_new_job = form.get("last_new_job")
         self.training_hours = form.get("training_hours")
 
-# ১. হোম পেজ রাউট (ইন্ডেক্স পেজ রেন্ডার করবে)
+
 @app.get("/", tags=["authentication"])
 async def index(request: Request):
     return templates.TemplateResponse(
             "index.html", {"request": request, "context": None})
 
-# ২. ট্রেইনিং রাউট (মডেল ট্রেইন করার জন্য)
+
 @app.get("/train")
 async def trainRouteClient():
     try:
@@ -86,14 +85,14 @@ async def trainRouteClient():
     except Exception as e:
         return Response(f"Error Occurred! {e}")
 
-# ৩. প্রেডিকশন রাউট (ফর্ম সাবমিট করলে এখানে আসবে)
+
 @app.post("/")
 async def predictRouteClient(request: Request):
     try:
         form = DataForm(request)
         await form.get_career_data()
         
-        # প্রেডিকশন পাইপলাইনের জন্য ডাটা অবজেক্ট তৈরি
+        
         career_data = CareerData(
             city = form.city,
             city_development_index = form.city_development_index,
@@ -106,17 +105,16 @@ async def predictRouteClient(request: Request):
             company_type = form.company_type,
             last_new_job = form.last_new_job,
             training_hours = form.training_hours,
-            company_size_max = form.company_size # আমরা কোম্পানি সাইজ ড্রপডাউন থেকে নিচ্ছি
+            company_size_max = form.company_size 
         )
 
-        # ইনপুট ডাটাকে ডাটাফ্রেমে রূপান্তর
+       
         career_df = career_data.get_career_input_data_frame()
 
-        # ক্লাসিফায়ার কল করা
+    
         model_predictor = CareerClassifier()
 
-        # প্রেডিকশন নেওয়া
-        # মডেল ১ দিলে 'Looking for change', ০ দিলে 'Not looking for change'
+       
         value = model_predictor.predict(dataframe=career_df)[0]
 
         status = "Employee is looking for a career switch!" if value == 1 else "Employee is NOT looking for a career switch."
@@ -129,6 +127,6 @@ async def predictRouteClient(request: Request):
     except Exception as e:
         return {"status": False, "error": f"{e}"}
 
-# সার্ভার স্টার্ট করা
+
 if __name__ == "__main__":
     app_run(app, host=APP_HOST, port=APP_PORT)
