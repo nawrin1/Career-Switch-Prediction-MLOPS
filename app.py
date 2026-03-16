@@ -8,9 +8,8 @@ from uvicorn import run as app_run
 
 from typing import Optional
 import pandas as pd
-from dotenv import load_dotenv
-import os
-load_dotenv()
+
+
 
 
 from src.constants import APP_HOST, APP_PORT
