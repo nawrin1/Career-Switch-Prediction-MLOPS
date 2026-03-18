@@ -4,6 +4,7 @@ Career_Switch_Prediction_Dataset.csv
 data/
 artifact/
 logs/
+.env
 *.csv
 *.pkl
 *.model

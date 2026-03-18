@@ -14,3 +14,4 @@ career-switch-prediction/
 Career_Switch_Prediction_Dataset.csv
 data/
 artifact/
+.env
