@@ -84,11 +84,100 @@ To run this project, you must configure the following secrets in your environmen
 git clone https://github.com/nawrin1/Career-Switch-Prediction-MLOPS
 cd Career-Switch-Prediction-MLOPS
 
-# Create Virtual Env
-conda create -n career python=3.10 -y
-conda activate career
+# Create Virtual Env using venv
+python -m venv career_env
 
+# Activate Virtual Env
+# For Windows:
+.\career_env\Scripts\activate
+# For Mac/Linux:
+source career_env/bin/activate
 # Install dependencies
 pip install -r requirements.txt
 
 ```
+### 2. Run the Application
+
+```
+python app.py
+
+#Access the UI locally
+http://127.0.0.1:8080
+
+```
+
+### 3. Docker Usage
+
+```
+# Build Image
+docker build -t career-app .
+
+# Run Container
+docker run -p 5000:5000 \
+-e MONGODB_URL="your_mongodb_url" \
+-e AWS_ACCESS_KEY_ID="your_aws_id" \
+-e AWS_SECRET_ACCESS_KEY="your_aws_secret" \
+-e AWS_DEFAULT_REGION="your_region" \
+career-app
+```
+
+##  AWS Deployment (CI/CD)
+This project leverages **GitHub Actions** to automate the end-to-end deployment workflow to **AWS**.
+
+*   **ECR (Elastic Container Registry):** Create a private repository in the AWS console named after your `ECR_REPO` secret. This registry stores your versioned Docker images.
+*   **S3 (Simple Storage Service):** Create an S3 bucket to serve as a centralized model registry. Ensure the bucket name matches the `MODEL_BUCKET_NAME` variable in `src/constants/__init__.py`.
+*   **EC2 (Elastic Compute Cloud):**
+    *   Launch an Ubuntu **T2-Medium** instance (recommended for stable processing).
+    *   Install **Docker** on the EC2 instance to run the containerized application.
+*   **GitHub Self-hosted Runner:** Configure a self-hosted runner on the EC2 instance. This allows GitHub Actions to securely communicate with your server and execute deployment scripts.
+*   **Security Group:** Edit the **Inbound Rules** for your EC2 instance to allow traffic on the specific port your application uses (e.g., **Custom TCP Port 5000** or **8080**).
+*   **Deployment Trigger:** Any `git push origin main` automatically triggers the CI/CD pipeline to:
+    1. Build a new Docker image.
+    2. Push the image to AWS ECR.
+    3. Pull and redeploy the container on the EC2 instance.
+
+---
+
+## ☁️ Automated AWS Deployment (CI/CD)
+
+
+### 1. AWS Infrastructure Setup
+1.  **ECR (Elastic Container Registry):** Create a private repository in the AWS Console (e.g., `career-switch-repo`). This will store your Docker images.
+2.  **S3 Bucket:** Create an S3 bucket to serve as the Model Registry. Ensure the bucket name matches the `MODEL_BUCKET_NAME` in your `src/constants/__init__.py`.
+3.  **EC2 Instance:** 
+    *   Launch an **Ubuntu T2-Medium** instance.
+    *   **Security Group:** Add an **Inbound Rule** for your application port (e.g., **5000** or **8080**) set to `Custom TCP` from `0.0.0.0/0`.
+    *   **Install Docker on EC2:**
+
+
+### 2. Configure GitHub Self-hosted Runner
+1.  In your GitHub repository, go to **Settings > Actions > Runners**.
+2.  Click **New self-hosted runner** and select **Linux**.
+3.  Follow the provided commands on your **EC2 terminal** to download, configure, and start the runner. 
+### 3. Set Up GitHub Secrets
+Go to **Settings > Secrets and variables > Actions** and add the following secrets:
+*   `AWS_ACCESS_KEY_ID`: Your IAM user access key.
+*   `AWS_SECRET_ACCESS_KEY`: Your IAM user secret key.
+*   `AWS_DEFAULT_REGION`: Your AWS region (e.g., `us-east-1`).
+*   `ECR_REPO`: The name of your ECR repository (e.g., `career-switch-repo`).
+*   `MONGODB_URL`: Your MongoDB Atlas connection string.
+
+### 4. Trigger Deployment
+Deployment is fully automated via the `main` branch. Simply commit and push your changes:
+```bash
+git add .
+git commit -m "Updated model logic"
+git push origin main
+
+```
+##  API Endpoints
+The following endpoints are available once the application is running:
+
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| **GET** | `/` | Renders the main web interface for career switch prediction. |
+| **POST** | `/` | Accepts employee data via form/JSON and returns the prediction result. |
+| **GET** | `/train` | Manually triggers the full Machine Learning training and evaluation pipeline. |
+
+
+
