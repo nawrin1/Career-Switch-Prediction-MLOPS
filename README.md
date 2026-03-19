@@ -102,7 +102,7 @@ pip install -r requirements.txt
 python app.py
 
 #Access the UI locally
-http://127.0.0.1:8080
+http://127.0.0.1:5000
 
 ```
 
@@ -121,24 +121,10 @@ docker run -p 5000:5000 \
 career-app
 ```
 
-##  AWS Deployment (CI/CD)
-This project leverages **GitHub Actions** to automate the end-to-end deployment workflow to **AWS**.
-
-*   **ECR (Elastic Container Registry):** Create a private repository in the AWS console named after your `ECR_REPO` secret. This registry stores your versioned Docker images.
-*   **S3 (Simple Storage Service):** Create an S3 bucket to serve as a centralized model registry. Ensure the bucket name matches the `MODEL_BUCKET_NAME` variable in `src/constants/__init__.py`.
-*   **EC2 (Elastic Compute Cloud):**
-    *   Launch an Ubuntu **T2-Medium** instance (recommended for stable processing).
-    *   Install **Docker** on the EC2 instance to run the containerized application.
-*   **GitHub Self-hosted Runner:** Configure a self-hosted runner on the EC2 instance. This allows GitHub Actions to securely communicate with your server and execute deployment scripts.
-*   **Security Group:** Edit the **Inbound Rules** for your EC2 instance to allow traffic on the specific port your application uses (e.g., **Custom TCP Port 5000** or **8080**).
-*   **Deployment Trigger:** Any `git push origin main` automatically triggers the CI/CD pipeline to:
-    1. Build a new Docker image.
-    2. Push the image to AWS ECR.
-    3. Pull and redeploy the container on the EC2 instance.
 
 ---
 
-## ☁️ Automated AWS Deployment (CI/CD)
+##  Automated AWS Deployment (CI/CD)
 
 
 ### 1. AWS Infrastructure Setup
